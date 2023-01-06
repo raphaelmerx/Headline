@@ -1,0 +1,23 @@
+{{{html}}}
+
+<section class="gh-content gh-canvas">
+    <aside class="gh-post-upgrade-cta">
+        <div class="gh-post-upgrade-cta-content" style="background-color: #ff1a75">
+            {{#has visibility="paid"}}
+                <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+            {{/has}}
+            {{#has visibility="members"}}
+                <h2 class="single-cta-title">This post is for subscribers only. </h2>
+            {{/has}}
+            {{#has visibility="filter"}}
+                <h2 class="single-cta-title">This post is for subscribers on the {{tiers}} only</h2>
+            {{/has}}
+            {{#if @member}}
+                <a class="gh-btn gh-portal-close" data-portal="account/plans" style="color:#ff1a75">Upgrade now</a>
+            {{else}}
+                <a class="gh-btn gh-portal-close" data-portal="signup" style="color:#ff1a75">Subscribe now – it's free!</a>
+                <p><small>Already have an account? <a data-portal="signin" class="gh-portal-close">Sign in</a></small></p>
+            {{/if}}
+        </div>
+    </aside>
+</section>
